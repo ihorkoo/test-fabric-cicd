@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "PL_Orchestration",
+    "description": "Bronze -> Silver -> Gold. Sends email and fails the run on any error."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "99dcda4f-1c80-4abe-b2fe-56cf4178e2be"
+  }
+}

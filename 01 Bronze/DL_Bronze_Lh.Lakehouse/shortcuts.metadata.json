@@ -1,0 +1,14 @@
+[
+  {
+    "name": "e_commerce_demo",
+    "path": "/Files",
+    "target": {
+      "type": "OneDriveSharePoint",
+      "oneDriveSharePoint": {
+        "connectionId": "4bb85292-f505-4df0-a50c-085a150c8d97",
+        "location": "https://datalab414.sharepoint.com",
+        "subpath": "/sites/FabricDemo/Документи/e_commerce_demo"
+      }
+    }
+  }
+]

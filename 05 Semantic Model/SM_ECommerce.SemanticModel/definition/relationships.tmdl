@@ -1,0 +1,20 @@
+relationship 4a5d7338-82da-8012-efcb-cf6cb1ebc608
+	fromColumn: gold_fact_payments.customer_id
+	toColumn: gold_dim_customer.customer_id
+
+relationship ef8c9635-7be4-0c07-76da-2535d643bf2c
+	fromColumn: gold_fact_sales.customer_id
+	toColumn: gold_dim_customer.customer_id
+
+relationship 3b06be16-a09e-1bc9-8a10-34e0969bc773
+	fromColumn: gold_fact_sales.product_id
+	toColumn: gold_dim_product.product_id
+
+relationship cbc16bfb-35b6-9e0c-bd74-00afe6b2b295
+	fromColumn: gold_fact_payments.date_key
+	toColumn: gold_dim_date.date_key
+
+relationship 6dc8e30e-380d-a56d-df90-1bde7d47ae0c
+	fromColumn: gold_fact_sales.date_key
+	toColumn: gold_dim_date.date_key
+

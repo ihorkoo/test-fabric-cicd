@@ -1,0 +1,72 @@
+table gold_fact_payments
+	lineageTag: a6a5fc07-810e-4758-9539-30428257add0
+	sourceLineageTag: [dbo].[gold_fact_payments]
+
+	column payment_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e220eccf-a783-4315-afe8-72c4b06bf83a
+		sourceLineageTag: payment_id
+		summarizeBy: sum
+		sourceColumn: payment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cd3b4167-91b5-4580-8e85-becea474e9dc
+		sourceLineageTag: order_id
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bfd0e95-db2d-402a-8d82-c18debf1e1a5
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: eb2251f3-7c94-45b6-a919-98e799b61e72
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column method
+		dataType: string
+		lineageTag: 9f606c52-18d4-44cd-88e0-e1e8ce9ee35f
+		sourceLineageTag: method
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e2e5d36d-8d37-45ba-956c-cdb9e0da6dac
+		sourceLineageTag: amount
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition gold_fact_payments = entity
+		mode: directLake
+		source
+			entityName: gold_fact_payments
+			schemaName: dbo
+			expressionSource: 'DirectLake - DL_Gold_Lh'
+

@@ -1,0 +1,39 @@
+table gold_dim_customer
+	lineageTag: 86ab2172-2e32-4ca3-8e49-ca253eb54f30
+	sourceLineageTag: [dbo].[gold_dim_customer]
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: dc37cd44-0649-491c-aa79-cde7cf7cc01e
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: a2e3f33b-0c63-49b6-8a30-2fe2a67ecbd8
+		sourceLineageTag: customer_name
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 8f25af6b-a404-4702-83e8-ccafbdbd893c
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_customer = entity
+		mode: directLake
+		source
+			entityName: gold_dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - DL_Gold_Lh'
+

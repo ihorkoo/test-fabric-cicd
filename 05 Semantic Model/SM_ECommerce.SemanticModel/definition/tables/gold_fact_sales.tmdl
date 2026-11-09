@@ -1,0 +1,84 @@
+table gold_fact_sales
+	lineageTag: bbc0843e-40ba-47e5-a5e5-b9699c0509ca
+	sourceLineageTag: [dbo].[gold_fact_sales]
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2435c275-2992-4e05-8d73-6cd21826c480
+		sourceLineageTag: order_id
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e959843a-49a6-4c86-99fe-8ce4e817a262
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b564ee5-6701-4914-8d32-19895bdeae49
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d9fbc936-3223-4b4b-bc96-207995cd3409
+		sourceLineageTag: product_id
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: fd49ac99-24b3-4540-af45-c27817744c33
+		sourceLineageTag: quantity
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a89c63f2-5bb6-41cb-b2ef-3a886787bff7
+		sourceLineageTag: unit_price
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column sales_amount
+		dataType: double
+		lineageTag: 633a04a9-0a16-4ccf-9df8-3756df26200f
+		sourceLineageTag: sales_amount
+		summarizeBy: sum
+		sourceColumn: sales_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_sales = entity
+		mode: directLake
+		source
+			entityName: gold_fact_sales
+			schemaName: dbo
+			expressionSource: 'DirectLake - DL_Gold_Lh'
+
